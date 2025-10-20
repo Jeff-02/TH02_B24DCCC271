@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { WeatherData } from '../types'; // Import type
+import { WeatherData } from '../types'; 
 
 const Weather: React.FC = () => {
-  const [city, setCity] = useState('Hanoi'); // Giá trị mặc định là Hà Nội
+  const [city, setCity] = useState('Hanoi'); 
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -24,7 +24,6 @@ const Weather: React.FC = () => {
     }
   };
 
-  // Tải thời tiết Hà Nội khi component được render lần đầu
   useEffect(() => {
     fetchWeather('Hanoi');
   }, []);
