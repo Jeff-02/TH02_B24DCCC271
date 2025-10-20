@@ -2,14 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
-import { User } from '../types'; // Import type
+import { User } from '../types'; 
 
 const UserDetail: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   
-  // Lấy `id` từ URL bằng hook useParams
   const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
@@ -29,7 +28,7 @@ const UserDetail: React.FC = () => {
 
       fetchUser();
     }
-  }, [id]); // useEffect sẽ chạy lại nếu `id` thay đổi
+  }, [id]); 
 
   if (loading) return <p>Đang tải chi tiết...</p>;
   if (error) return <p style={{ color: 'red' }}>{error}</p>;
