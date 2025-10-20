@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { User } from '../types'; // Import type
+import { User } from '../types'; 
 
 const UserList: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -23,7 +23,7 @@ const UserList: React.FC = () => {
     };
 
     fetchUsers();
-  }, []); // [] đảm bảo useEffect chỉ chạy 1 lần khi component mount
+  }, []); 
 
   if (loading) return <p>Đang tải danh sách...</p>;
   if (error) return <p style={{ color: 'red' }}>{error}</p>;
