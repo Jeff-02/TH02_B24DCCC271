@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Article, NewsApiResponse } from '../types'; // Import types
+import { Article, NewsApiResponse } from '../types'; 
 
 const News: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
